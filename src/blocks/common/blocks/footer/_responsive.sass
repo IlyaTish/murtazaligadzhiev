@@ -1,0 +1,61 @@
+@media (max-width: 991px)
+  .footer
+    padding: 60px 0
+
+    &__cont
+      grid-template-columns: 1fr 1fr 1fr 1fr
+      grid-template-areas: 'info info info info' 'col col nav nav'
+
+    &__col
+      grid-area: col
+
+  .footer-nav
+    grid-area: nav
+    grid-gap: 30px
+
+  .footer-info
+    display: flex
+    grid-area: info
+    margin: 0 0 60px
+
+    &__item
+      text-align: left
+
+      &--item-2
+        margin: 0
+
+
+@media (max-width: 620px)
+  .footer
+    &__cont
+      grid-template-columns: 1fr
+      grid-template-areas: unset
+
+    &__col
+      grid-area: unset
+      order: 3
+
+  .footer-nav
+    margin: 0 0 50px
+    grid-gap: 0
+    grid-area: unset
+    order: 2
+
+  .footer-info
+    grid-area: unset
+    order: 1
+
+  .footer-note
+    margin: 50px 0 0
+
+
+@media (max-width: 479px)
+  .footer-nav
+    grid-gap: 20px
+
+  .footer-info
+    flex-wrap: wrap
+
+    &__item
+      &--item-2
+        margin: 40px 0 0

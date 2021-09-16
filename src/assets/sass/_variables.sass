@@ -1,0 +1,19 @@
+// -------- Variables --------
+
+$main: #FE9800
+
+$main-hover: #FF3F60
+$main-active: #EE2D4E
+
+$gray: #D1D3D4
+$txt-gray: #9C9C9C
+$dark: #2D4345
+$black: #000000
+
+@mixin retina
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min-resolution: 1.5dppx),
+  only screen and (min-resolution: 144dpi)
+    @content
