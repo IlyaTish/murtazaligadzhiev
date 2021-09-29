@@ -2,10 +2,10 @@ extends template
 
 block content
   //- Header block ('.header')
-  include /common/blocks/header/block
+  include /common/header/block
 
   //- Burger-menu block ('.burger-menu')
-  include /common/blocks/burger-menu/block
+  include /common/burger-menu/block
 
 
   - const page = 'index'
@@ -14,6 +14,9 @@ block content
     //- Main block ('.main')
     include /main/block
 
+    //- Prices block ('.prices')
+    include /prices/block
+
 
   //- Footer block ('.footer')
-  include /common/blocks/footer/block
+  include /common/footer/block

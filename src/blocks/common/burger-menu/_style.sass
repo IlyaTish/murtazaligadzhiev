@@ -16,7 +16,7 @@
   &__cont
     width: 330px
     height: 100%
-    padding: 22px 30px
+    padding: 20px
     left: 0
     position: relative
     background: #FFFFFF
@@ -34,7 +34,7 @@
     width: 20px
     height: 20px
     top: 14px
-    left: 340px
+    right: 5px
     position: absolute
     cursor: pointer
     z-index: 3
@@ -42,7 +42,6 @@
   .header-nav
     &__list
       display: block
-      border-top: 1px solid $gray
 
     &__item
       width: 100%
@@ -52,28 +51,24 @@
         .header-nav__link
           border: none
 
+      &:last-of-type
+        margin-top: auto
+
     &__link
       width: 100%
       padding: 10px 12px
       display: block
       color: $black
-      font-size: 14px
       border-top: 1px solid $gray
       box-sizing: border-box
 
       &:hover
         color: $main
 
-  .search
-    &__input
-      padding: 8px 10px
-
-  .catalog-menu
-    &__item
-      .tabs__item
-        .icon
-          right: 4px
-          position: relative
+    &__link.phone-link
+      margin-top: auto
+      padding: 30px 12px
+      display: flex
 
   .btn
     min-width: auto

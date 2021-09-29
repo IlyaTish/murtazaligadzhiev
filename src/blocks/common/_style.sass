@@ -21,6 +21,20 @@ img
   max-width: 100%
   display: block
 
+h1,
+h2,
+h3,
+h4,
+h5
+  margin: 0
+  color: #000
+  font-size: 34px
+  font-weight: 600
+
+@media (max-width: 769px)
+  h2
+    font-size: 26px
+
 p
   margin: 0
   font-size: 14px
@@ -48,50 +62,62 @@ table
 
   thead
     tr
-      background: #A7D78B
+      background: #F7F7F7
+      border-bottom: 1px dashed #000
 
     th,
     td
       padding: 12px 10px
       font-size: 14px
+      font-weight: 400
+      text-align: center
 
   tr
     background: #FFFFFF
 
     &:nth-child(even)
-      background: #F5F5F5
+      background: #F7F7F7
 
   th,
   td
     width: 100%
     padding: 13px 10px
-    color: $dark
-    font-size: 12px
+    color: #000
+    font-size: 14px
     font-weight: 500
     text-align: left
     box-sizing: border-box
 
+    &:last-of-type
+      width: 40%
+      text-align: center
+      border-left: 1px dashed #000
+
   th
-    font-weight: 550
+    color: #484848
 
-  td.align-right
-    text-align: right
-
-  td.width-03
-    width: 70%
-
-.table
-  &--border
-    border-bottom: 1px solid #D1D3D4
-
-@media (max-width: 767px)
+@media (max-width: 590px)
   .table-wrapper
     overflow-x: scroll
     overflow-y: hidden
 
   table
-    min-width: 710px
+    th,
+    td
+      width: 100%
+      padding: 13px 10px
+      color: #000
+      font-size: 12px
+      font-weight: 500
+      text-align: left
+      box-sizing: border-box
 
+@media (max-width: 481px)
+  table
+    th,
+    td
+      &:last-of-type
+        width: 60%
 
 .container
   width: 100%
@@ -101,7 +127,7 @@ table
   padding: 0 20px
   box-sizing: border-box
 
-  @media (max-width: 767px)
+  @media (max-width: 769px)
     padding: 0 16px
 
 .wrapper
