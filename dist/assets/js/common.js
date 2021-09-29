@@ -6,6 +6,10 @@
 ready(() => {
   // -------- Exports --------
 
-  //= require common/blocks/burger-menu/script.js
-  //= require common/blocks/header/script.js
+  //= require common/burger-menu/script.js
+  //= require common/header/script.js
+
+  window.onresize = () => {
+    headerScript.headerTeleport()
+  }
 })

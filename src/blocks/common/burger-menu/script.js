@@ -61,9 +61,7 @@ const burgerMenuScript = (() => {
       }
     }
 
-    if (viewportWidth < 993) {
-      burgerEvent();
-    }
+    burgerEvent();
   }
 
 
