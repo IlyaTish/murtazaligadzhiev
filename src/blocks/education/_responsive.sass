@@ -1,0 +1,52 @@
+@media (max-width: 1201px)
+  .education
+    &__photo
+      width: 40%
+      height: 580px
+
+  .education-list
+    display: grid
+    grid-gap: 0 20px
+    grid-template-columns: 1fr 1fr
+
+  .education-item
+    display: block
+    margin: 0
+
+    &__img-link
+      width: 95%
+      flex: 95% 0 0
+      height: 200px
+      margin: 0 0 14px
+
+
+@media (max-width: 993px)
+  .education
+    &__cont
+      display: block
+
+    &__photo
+      width: 100%
+      max-width: 600px
+      margin: 0 0 20px
+
+
+@media (max-width: 590px)
+  .education
+    padding: 40px 0
+
+    &__title
+      margin: 0 0 20px
+
+    &__photo
+      height: 400px
+
+
+@media (max-width: 480px)
+  .education-list
+    grid-gap: 20px
+    grid-template-columns: 1fr
+
+  .education-item
+    &__img-link
+      width: 100%
