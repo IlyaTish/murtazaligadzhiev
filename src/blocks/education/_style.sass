@@ -27,6 +27,43 @@
     flex: 340px 0 0
     display: block
     margin: 0 10px 0 0
+    position: relative
+
+    &:before
+      width: 100%
+      height: 100%
+      content: ''
+      display: block
+      top: 0
+      left: 0
+      position: absolute
+      color: #FFF
+      background: #00000096
+      opacity: 0
+      transition: .5s
+
+    .caption
+      width: 100%
+      height: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      top: 0
+      left: 0
+      position: absolute
+      color: #FFF
+      font-style: 550
+      opacity: 0
+      transition: .8s
+      transform: translateY(10px)
+
+    &:hover
+      .caption
+        opacity: 1
+        transform: translateY(0)
+
+      &:before
+        opacity: 1
 
   &__img
     width: 100%
@@ -47,7 +84,3 @@
     color: #6F6F6F
     font-size: 14px
     font-weight: 500
-
-.fslightbox-open
-  height: auto !important
-  overflow: scroll !important
