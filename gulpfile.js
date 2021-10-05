@@ -176,7 +176,7 @@ gulp.task('images', () => {
   console.log('\n' + '* Минификация картинок *');
 
   return gulp
-    .src(PATHS.src + '/blocks/**/**/**/*.+(png|jpg|jpeg|gif|svg|ico)')
+    .src(PATHS.src + '/blocks/**/**/**/*.+(png|jpg|jpeg|webp|gif|svg|ico)')
     .pipe(plumber())
     .pipe(imagemin())
     .pipe(rename((path) => {
@@ -193,7 +193,7 @@ gulp.task('images', () => {
 gulp.task('other.files', () => {
   console.log('\n' + '* Копирование остальных файлов *');
 
-  return gulp.src(['**/**', '!**/*.{pug,sass}'], { cwd: PATHS.src + '/assets' })
+  return gulp.src(['**/**', '!**/*.{pug,sass}', '!**/sass'], { cwd: PATHS.src + '/assets' })
   .pipe(gulp.dest(PATHS.dist + '/assets'))
 });
 

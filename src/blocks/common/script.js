@@ -2,6 +2,9 @@
 
 const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 
+const burgerBtn     = document.querySelectorAll('.burger-btn'),
+      burgerMenu    = document.querySelector('.burger-menu');
+
 
 
 // -------- Functions --------
@@ -33,80 +36,40 @@ const teleportEach = (elements, conts) => {
 
 
 
-const initAccordeon = () => {
-  [].forEach.call(document.querySelectorAll('.item'), item => {
-    const head    = item.querySelector('.head'),
-          content = item.querySelector('.content');
+/* Smooth scroll to anchor */
 
-    head.addEventListener('click', e => {
-      const collection = e.path;
+const links = document.querySelectorAll('.header-nav__list a');
 
-      e.preventDefault();
+const clickHandler = e => {
+  e.preventDefault();
 
-      collection.forEach(e => {
-        if (e === item) item.classList.add('active')
-      });
+  const href      = e.currentTarget.getAttribute('href'),
+        offsetTop = document.querySelector(href).offsetTop - 60;
 
-      const animateHeight = (e, val_1, val_2, timeout) => {
-        content.setAttribute('style', `height:${val_1}px`);
+  burgerMenu.classList.remove('active');
+  burgerMenu.classList.add('transition');
+  burgerMenu.classList.add('hidden');
 
-        e.stopPropagation();
+  burgerMenu.clientWidth;
 
-        if (timeout) {
-          setTimeout(() => {
-            content.setAttribute('style', `height:${val_2}px`);
-            content.addEventListener('transitionend', () =>
-              content.removeAttribute('style')
-            )
-          })
-        } else {
-          content.setAttribute('style', `height:${content.offsetHeight}px`);
-          setTimeout(() =>
-            content.setAttribute('style', `height:${val_2}px`)
-          )
-        }
-      }
+  burgerMenu.addEventListener('transitionend', () =>
+    burgerMenu.classList.remove('transition')
+  );
 
-      if (content.classList.contains('collapsed')) {
-        // show
-
-        content.classList.add('transition');
-
-        window.getComputedStyle(content).width;
-
-        content.classList.remove('hidden');
-        content.classList.remove('collapsed');
-
-        const contentHeight = content.offsetHeight;
-
-        animateHeight(e, 0, contentHeight, true)
-      }
-
-      else {
-        // hide
-
-        const contentHeight = content.offsetHeight;
-
-        animateHeight(e, contentHeight, 0)
-
-        content.removeAttribute('style');
-
-        content.classList.add('transition');
-        content.classList.add('hidden');
-        content.classList.add('collapsed');
-
-        item.classList.remove('active');
-      }
-    });
-
-    content.addEventListener('transitionend', () =>
-      content.classList.remove('transition')
-    )
-  })
+  window.scrollTo({
+    top: offsetTop,
+    behavior: 'smooth'
+  });
 }
+
+links.forEach(link => link.addEventListener('click', clickHandler));
+
+
+
+/* Lazyload */
+
+const lazyLoadInstance = new LazyLoad();
 
 
 
 // -------- Functions execution --------
-
-initAccordeon();
