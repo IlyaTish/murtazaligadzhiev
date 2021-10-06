@@ -46,20 +46,14 @@ const clickHandler = e => {
   const href      = e.currentTarget.getAttribute('href'),
         offsetTop = document.querySelector(href).offsetTop - 60;
 
-  burgerMenu.classList.remove('active');
-  burgerMenu.classList.add('transition');
-  burgerMenu.classList.add('hidden');
-
-  burgerMenu.clientWidth;
-
-  burgerMenu.addEventListener('transitionend', () =>
-    burgerMenu.classList.remove('transition')
-  );
-
   window.scrollTo({
     top: offsetTop,
     behavior: 'smooth'
   });
+
+  setTimeout(() => {
+    burgerMenu.classList.remove('transition')
+  }, 10)
 }
 
 links.forEach(link => link.addEventListener('click', clickHandler));
@@ -68,7 +62,9 @@ links.forEach(link => link.addEventListener('click', clickHandler));
 
 /* Lazyload */
 
-const lazyLoadInstance = new LazyLoad();
+const lazyLoadInstance = new LazyLoad({
+  threshold: 700,
+});
 
 
 

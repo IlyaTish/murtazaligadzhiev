@@ -10,6 +10,8 @@ const burgerMenuScript = (() => {
         burgerMenuBg  = document.querySelector('.burger-menu-bg'),
         btnClose      = document.querySelector('.btn-close');
 
+  const links = document.querySelectorAll('.header-nav__list a');
+
   let flag = 1;
 
 
@@ -54,10 +56,11 @@ const burgerMenuScript = (() => {
           burgerMenuBg.addEventListener('click', e => closeBurgerMenu());
 
         btnClose.addEventListener('click', e => closeBurgerMenu());
+        links.forEach(link => link.addEventListener('click', e => closeBurgerMenu()));
 
         burgerMenu.addEventListener('transitionend', () =>
           burgerMenu.classList.remove('transition')
-        )
+        );
       }
     }
 
