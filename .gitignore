@@ -7,13 +7,13 @@
 *.swo
 *.swp
 *.vi
+*.DS_Store
 *~
 *.sass-cache
 node_modules/
 .tmp/
 
 # OS or Editor folders
-.DS_Store
 Thumbs.db
 .cache
 .project
